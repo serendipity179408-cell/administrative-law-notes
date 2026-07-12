@@ -1,0 +1,32 @@
+name: 自動更新筆記主頁
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+      - "!index.html"
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取出 repository 內容
+        uses: actions/checkout@v4
+
+      - name: 設定 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: 執行腳本產生 index.html
+        run: python3 generate_index.py
+
+      - name: 自動提交更新後的 index.html
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "自動更新筆記主頁 index.html"
+          file_pattern: index.html
