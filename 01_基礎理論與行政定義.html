@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行政法第一堂課｜基礎理論與行政定義 整理筆記</title>
+<meta name="note-title" content="第一堂課：基礎理論與行政定義（上／中／下）">
+<meta name="note-desc" content="行政的定義（組織／形式／實質三分）、實質意義行政界定標準、行政類型與分類、私經濟行政與公私法區別">
+<meta name="note-tags" content="釋字457/540/448/553,名詞解釋表">
+<meta name="note-unit" content="基礎理論">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --ink: #1a1a1a;
+    --ink-soft: #555555;
+    --line: #e5e5e5;
+    --accent: #2c2c2c;
+    --highlight-bg: #f5f5f2;
+    --highlight-border: #d8d4c8;
+    --tag-bg: #eef0ec;
+    --tag-ink: #4a5a45;
+    --max-width: 880px;
+    --sidebar-width: 250px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Sidebar / TOC ---------- */
+  .sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 32px 20px;
+    border-right: 1px solid var(--line);
+  }
+
+  .sidebar-title {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .toc { list-style: none; margin: 0; padding: 0; }
+  .toc li { margin-bottom: 4px; }
+  .toc a {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14.5px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toc a:hover { background: var(--bg-soft); color: var(--ink); }
+  .toc .toc-main > a { font-weight: 600; color: var(--ink); margin-top: 10px; }
+  .toc .toc-sub a { padding-left: 22px; font-size: 13.5px; }
+  .toc a.active { background: var(--tag-bg); color: var(--tag-ink); font-weight: 600; }
+
+  /* ---------- Mobile TOC toggle ---------- */
+  .mobile-toc-toggle { display: none; }
+
+  /* ---------- Main content ---------- */
+  .content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 32px 100px;
+    max-width: var(--max-width);
+  }
+
+  header.page-header {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  header.page-header .eyebrow {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  header.page-header h1 {
+    font-size: 26px;
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+  header.page-header p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  h2.section-title {
+    font-size: 21px;
+    margin: 0;
+    padding: 0;
+  }
+  h3 { font-size: 17.5px; margin: 28px 0 10px; }
+  h4 { font-size: 16px; margin: 20px 0 8px; color: var(--ink); }
+
+  p { margin: 10px 0; }
+  ul, ol { padding-left: 22px; margin: 10px 0; }
+  li { margin-bottom: 4px; }
+
+  strong { font-weight: 700; }
+
+  /* ---------- Collapsible sections ---------- */
+  details.section {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  details.section > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 20px;
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  details.section > summary::-webkit-details-marker { display: none; }
+  .summary-chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+    color: var(--ink-soft);
+  }
+  details[open] > summary .summary-chevron { transform: rotate(90deg); }
+  .section-body { padding: 6px 22px 20px; }
+
+  details.subsection {
+    border-left: 3px solid var(--line);
+    margin: 14px 0;
+    padding-left: 4px;
+  }
+  details.subsection > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 8px 12px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  details.subsection > summary::-webkit-details-marker { display: none; }
+  details.subsection .summary-chevron { width: 15px; height: 15px; color: var(--ink-soft); }
+  .subsection-body { padding: 4px 12px 6px; }
+
+  /* ---------- Callouts ---------- */
+  .box {
+    border: 1px solid var(--highlight-border);
+    background: var(--highlight-bg);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 15px;
+  }
+  .box.law {
+    border-left: 3px solid #7d8f74;
+  }
+  .box.exam {
+    border-left: 3px solid #a8763e;
+    background: #f7f2ec;
+    border-color: #e6d8c4;
+  }
+  .box.warn {
+    border-left: 3px solid #b5544a;
+    background: #f9f0ef;
+    border-color: #e6d2cf;
+  }
+  .box-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  code, .law-cite { font-family: "SF Mono", Menlo, monospace; font-size: 0.92em; }
+
+  /* ---------- Tables ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--bg-soft);
+    font-weight: 700;
+  }
+  tr:nth-child(even) td { background: #fcfcfb; }
+
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+    font-size: 12.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .tag.verified { background: #eaf1e8; color: #46613f; }
+
+  /* ---------- Diagram box (monospace ascii) ---------- */
+  pre.diagram {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  footer.page-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  a.back-to-top {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  a.back-to-top:hover { text-decoration: underline; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 78%;
+      max-width: 300px;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+    }
+    .sidebar.open { transform: translateX(0); }
+
+    .mobile-toc-toggle {
+      display: flex;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 60;
+      align-items: center;
+      gap: 6px;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 40;
+    }
+    .overlay.open { display: block; }
+
+    .content { padding: 24px 18px 100px; }
+    header.page-header h1 { font-size: 22px; }
+    .section-body, .subsection-body { padding-left: 4px; padding-right: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===================== SIDEBAR / TOC ===================== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-title">目錄</div>
+    <ul class="toc">
+      <li class="toc-main"><a href="#overview">課程範圍概覽</a></li>
+
+      <li class="toc-main"><a href="#part-1">上：基礎理論與行政定義</a></li>
+      <li class="toc-sub"><a href="#p1-1">四大區塊與法學體系</a></li>
+      <li class="toc-sub"><a href="#p1-2">行政的定義與三種意義</a></li>
+      <li class="toc-sub"><a href="#p1-3">實質意義行政的界定標準</a></li>
+
+      <li class="toc-main"><a href="#part-2">中：行政類型與三者關聯</a></li>
+      <li class="toc-sub"><a href="#p2-1">三合一交集關係</a></li>
+      <li class="toc-sub"><a href="#p2-2">歷屆考古題演練</a></li>
+      <li class="toc-sub"><a href="#p2-3">行政的分類</a></li>
+
+      <li class="toc-main"><a href="#part-3">下：私經濟行政與公私法區別</a></li>
+      <li class="toc-sub"><a href="#p3-1">公權力行政與私經濟行政</a></li>
+      <li class="toc-sub"><a href="#p3-2">私經濟行政三大類型</a></li>
+      <li class="toc-sub"><a href="#p3-3">公私法區別標準</a></li>
+      <li class="toc-sub"><a href="#p3-4">基本權拘束力爭議</a></li>
+
+      <li class="toc-main"><a href="#appendix-1">附錄：條文／釋字查證</a></li>
+      <li class="toc-main"><a href="#appendix-2">附錄：名詞解釋表</a></li>
+    </ul>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="content">
+
+    <header class="page-header">
+      <div class="eyebrow">徐偉超・行政法・第一堂課</div>
+      <h1>基礎理論與行政定義（上／中／下）</h1>
+    </header>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section id="overview">
+      <h2 class="section-title">課程範圍概覽</h2>
+      <p>行政法主要由四大區塊構成：<strong>基礎理論、行政組織、行政作用、行政救濟</strong>。這堂課從「基礎理論」切入，內容依序為：</p>
+      <ol>
+        <li><strong>上</strong>：行政法的思考體系、行政的定義（行政學／憲法學／行政法學三種角度）、實質意義行政的界定標準</li>
+        <li><strong>中</strong>：組織／形式／實質三種意義行政的交集關係、歷屆考古題、行政的各種分類（直接間接、內部外部、自治委辦）</li>
+        <li><strong>下</strong>：公權力行政與私經濟行政的區分、私經濟行政三大類型、公私法區別標準、私經濟行政是否受基本權拘束</li>
+      </ol>
+      <div class="box exam">
+        <div class="box-label">重點提示</div>
+        本篇講義涉及釋字第457、540、448、553號及相關民法、地方制度法條文，其完整案件事實、解釋意旨與學理意義整理於文末<strong>附錄一</strong>。
+      </div>
+    </section>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+
+    <!-- ===================== PART 1 ===================== -->
+    <section id="part-1">
+      <h2 class="section-title" style="margin-bottom:14px;">上、行政法基礎理論與行政定義</h2>
+
+      <details class="section" id="p1-1" open>
+        <summary>
+          <span>一、行政法的四大區塊與法學思考體系</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p>國家利用公法人搭配行政機關出現在人民面前對人民做出行為或處置，這一塊叫做<strong>「行政作用」</strong>（例如做成行政處分、締結行政契約）。人民對行政行為不服而提起救濟的規範，則是<strong>「行政救濟」</strong>。</p>
+          <p>行政法由三個區塊構成：<strong>行政組織、行政作用、行政救濟</strong>；再加上針對三者共通性事項的<strong>「基礎理論」</strong>，合計四大區塊。</p>
+
+          <details class="subsection">
+            <summary>
+              補充：如何建構法學體系？
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <p>邏輯學上對一個「概念」的理解方式有二：</p>
+              <ul>
+                <li><strong>內涵（Intension）</strong>：定義「這是什麼」</li>
+                <li><strong>外延（Extension）</strong>：類型化的動作</li>
+              </ul>
+              <p>法學者在類型化之後，進一步探討：</p>
+              <ul>
+                <li><strong>區別標準</strong>：兩種類型「要按怎區分」？</li>
+                <li><strong>區別實益</strong>：區分之後「有差嗎」？</li>
+              </ul>
+              <p>若一個類型只有區別標準而無區別實益，代表尚在發展中；若兩者兼具且學說實務爭議不斷，<strong>必定是考試重點</strong>。</p>
+              <p>法學者進一步針對概念建構<strong>「構成要件」</strong>與<strong>「法律效果」</strong>，呈現在條文中，這是法學與其他科學最大的不同。基本方法回歸：<strong>定義 → 類型 → 要件 → 效果</strong>。</p>
+              <div class="box">
+                公法非常抽象，無法只靠「望文生義」或法感來學習。若只憑感覺學公法，成績到瓶頸就上不去，因為沒有確實掌握定義。
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="section" id="p1-2">
+        <summary>
+          <span>二、行政的定義與權力分立下的定位</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+
+          <h4>1. 行政學的角度：「經營或管理」</h4>
+          <p>會產生失焦問題，因為私部門也天天在經營管理，行政法學者不會直接借用這個定義。</p>
+
+          <h4>2. 憲法學的角度：「執行」</h4>
+          <p>三權分立下，國會制定法律、行政執行法律、司法在個案審判中裁斷。但司法也在「執行法律」，單純用「執行」界定行政同樣會失焦。</p>
+
+          <h4>3. 行政法學的角度：組織／形式／實質三分</h4>
+          <ul>
+            <li><strong>組織意義的行政</strong>（靜態）：行政主體、機關、內部單位構成的整體。例：行政院、考試院、總統府、地方行政機關。</li>
+            <li><strong>形式意義的行政</strong>（動態）：組織意義的行政機關所從事的一切活動，不論本質為何。包含處理行政事務（最典型），也包含從事立法工作（如訂定施行細則）。</li>
+            <li><strong>實質意義的行政</strong>（動態）：只有真正在處理行政事務的活動才算，即使是立法院、司法院等非行政機關處理內部行政事務，也屬於實質意義行政。</li>
+          </ul>
+
+          <details class="subsection">
+            <summary>
+              五院與實質意義行政的空間逐一解析
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <table>
+                <tr><th>院</th><th>核心作用（非實質意義行政）</th><th>實質意義行政空間</th></tr>
+                <tr><td>立法院</td><td>制定法律</td><td>任免人員、核發旁聽證、維持秩序</td></tr>
+                <tr><td>司法院</td><td>裁判</td><td>輔助裁判之司法行政（任免法官書記官、法人登記、律師登錄）；公證與非訟事件則<strong>非</strong>實質意義行政（僅是立法政策考量）</td></tr>
+                <tr><td>考試院</td><td>本身即行政權一環</td><td>辦理考試、錄取、銓敘、退休保障，均屬典型實質意義行政</td></tr>
+                <tr><td>監察院</td><td>彈劾、糾舉、糾正</td><td>任免內部人員、受理公職人員財產申報並處罰</td></tr>
+              </table>
+              <div class="box exam">
+                <div class="box-label">重要結論</div>
+                五院內部都有實質意義行政存在的空間；無論組織意義的行政機關（行政院、考試院）或非組織意義的行政機關（立法院、司法院、監察院），都有實質意義行政的空間。
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="section" id="p1-3">
+        <summary>
+          <span>三、實質意義行政的界定標準（四種學說）</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+
+          <h4>1. 消極說（扣除說／控除說）</h4>
+          <p>扣除立法與司法後剩餘的活動即為行政。批評：①扣除對象本身不明確 ②遺漏統治行為（如總統任命行政院長、發布緊急命令）③統治行為與行政難以區分 ④<strong>致命傷</strong>：無助於正面理解行政的實質內涵。</p>
+
+          <h4>2. 積極說（正面界定說）</h4>
+          <p>從組織層面（公共團體與任用人員）與作用層面（多樣性、有條件性、目的一定性、僅保留部分規劃與裁量空間）正面定義行政。缺點：<strong>言詞繁贅、失之繁瑣</strong>（陳敏大法官語）。</p>
+
+          <h4>3. 綜合說</h4>
+          <p>先消極說扣除，再積極說正面界定剩餘活動；缺點是兼具兩者的缺點。</p>
+
+          <h4>4. 特徵描述說（學說主流）</h4>
+          <p>行政無法被精確定義，只能透過與私部門及其他國家權力比較來描述特徵：</p>
+          <ul>
+            <li><strong>與私部門</strong>：目的上追求公益（非私益）；組織上動用公法組織</li>
+            <li><strong>與立法權</strong>：行政具「具體個別性」（一次性效果），立法具「抽象普遍性」</li>
+            <li><strong>與司法權</strong>：行政「積極主動」介入；且基於行政一體原則須接受上級指揮監督（司法則審判獨立）</li>
+            <li><strong>其他特徵</strong>：對社會具形成作用；「羈束性」與「自由性」並存（判斷餘地、行政裁量）</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+
+    <!-- ===================== PART 2 ===================== -->
+    <section id="part-2">
+      <h2 class="section-title" style="margin-bottom:14px;">中、行政類型與三者關聯</h2>
+
+      <details class="section" id="p2-1" open>
+        <summary>
+          <span>一、組織／形式／實質意義行政之關係（交集圖示）</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p>三者是<strong>「交集關係，而非重疊關係」</strong>：</p>
+          <pre class="diagram">
+形式意義的行政（組織行政所做的活動）
+┌─────────────────────────┐
+│  A區：組織行政＋立法工作   │  例：行政院訂定施行細則
+│  B區：組織行政＋處理行政   │  例：行政院徵兵、課稅
+└───────────┬─────────────┘
+            │  C區：非組織行政＋處理行政
+            │  例：立法院任免國會助理、司法院任免書記官
+┌───────────┴─────────────┐
+│   實質意義的行政（本質為處理行政事務） │
+└─────────────────────────┘</pre>
+          <ul>
+            <li><strong>A區</strong>：形式意義行政，<strong>非</strong>實質意義行政</li>
+            <li><strong>B區</strong>：既是形式意義，也是實質意義行政</li>
+            <li><strong>C區</strong>：實質意義行政，但<strong>非</strong>組織或形式意義行政</li>
+          </ul>
+          <div class="box exam">
+            <div class="box-label">選擇題核心敘述（常考）</div>
+            「凡組織意義之行政所為者，必為形式意義之行政，但未必均為實質意義之行政」（對，可能是A區）；「實質意義之行政，未必均由組織意義之行政所為」（對，可能是C區）。
+          </div>
+        </div>
+      </details>
+
+      <details class="section" id="p2-2">
+        <summary>
+          <span>二、歷屆選擇題真題演練</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <details class="subsection">
+            <summary>
+              題目一（113年高考三等／原住民特考）
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <p>下列有關我國行政概念之敘述，何者<strong>錯誤</strong>？(A) 立法院任免與旁聽證核發，均屬實質意義行政 (B) 法院處理公證及非訟事件，非屬實質意義行政 (C) 監察院行使彈劾、糾舉、審計，屬實質意義行政 (D) 考試院舉辦國家考試，屬於實質意義行政</p>
+              <div class="box exam"><div class="box-label">答案：(C)</div>彈劾、糾舉、審計屬於監察權的核心作用，而非實質意義行政；(A)(B)(D) 均正確。</div>
+            </div>
+          </details>
+          <details class="subsection">
+            <summary>
+              題目二
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <p>下列關於行政之敘述，哪一個<strong>錯誤</strong>？...(C) 行政首重層級指揮監督，<strong>任何</strong>下一級機關是否執行，均接受上級機關之合法性與合目的性監督。</p>
+              <div class="box exam"><div class="box-label">答案：(C)</div>關鍵字在「任何」——獨立機關（NCC、中選會、公平會）僅受行政院之<strong>合法性監督</strong>，不受合目的性監督。</div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="section" id="p2-3">
+        <summary>
+          <span>三、行政的分類（組織與作用觀點）</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+
+          <h4>1. 直接行政與間接行政</h4>
+          <p><strong>直接行政</strong>：由國家及其行政機關直接執行（如教育部執行教育行政）。<strong>間接行政</strong>：國家退居幕後，交由國家以外的行政主體執行，國家僅監督。德國三種間接行政主體：</p>
+          <ul>
+            <li><strong>公法社團</strong>：地域團體（地方自治團體）、身分團體（職業公會）、聯合團體</li>
+            <li><strong>公法財團</strong></li>
+            <li><strong>公營造物</strong>：如圖書館、美術館、機場</li>
+          </ul>
+
+          <div class="box warn">
+            <div class="box-label">德台制度大對照（極重要考點：不要認他鄉為故鄉）</div>
+            <table style="margin-top:8px;">
+              <tr><th>組織類型</th><th>德國</th><th>我國現況</th></tr>
+              <tr><td>地方自治團體</td><td>公法人</td><td><strong>具公法人地位</strong>（地方制度法第2、4條）</td></tr>
+              <tr><td>職業團體（律師公會等）</td><td>公法社團</td><td><strong>不具公法人地位</strong>，屬民法社團法人</td></tr>
+              <tr><td>工法財團</td><td>公法人</td><td><strong>我國無此制度</strong>，僅有「公設財團法人」（本質私法人）</td></tr>
+              <tr><td>公營造物（圖書館、大學）</td><td>公法人</td><td>三種可能：行政法人（如兩廳院）／行政機關（國立大學）／公共設施（一般圖書館）</td></tr>
+            </table>
+          </div>
+
+          <details class="subsection">
+            <summary>
+              法界八卦：律師公會侵占公款案
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <p>律師公會屬私法社團，會員欠費只能發函催繳或聲請支付命令。某公會會計侵占數千萬公款後，因侵占的是全體律師的錢，全台竟無律師敢接案辯護——印證我國律師公會私法社團本質。</p>
+            </div>
+          </details>
+
+          <h4>2. 內部行政與外部行政</h4>
+          <p><strong>內部行政</strong>：效力僅及機關內部（組織行為、人事任免），原則<strong>不得提起行政救濟</strong>。<strong>外部行政</strong>：效力直接對外及於人民（徵兵、課稅），須遵循法律保留原則與比例原則，人民<strong>可提起行政救濟</strong>。</p>
+          <div class="box">
+            內部行政對人民的影響僅屬「反射利益」受損，非「權利」受損，不能提起行政訴訟。
+          </div>
+
+          <h4>3. 自治行政與委辦行政</h4>
+          <p>存在於地方自治團體運作中：<strong>自治行政</strong>處理自己權限內事務；<strong>委辦行政</strong>處理中央交辦事務。</p>
+          <div class="box law">
+            <div class="box-label">釋字第553號 <span class="tag verified">已查證✓</span></div>
+            <strong>自治事項</strong>：中央對地方僅能「合法性監督（法律監督）」，做得妥不妥當中央無權干涉。<strong>委辦事項</strong>：中央除合法性監督外，還可進行「合目的性監督（專業監督／妥當性監督）」，實施全面性監督。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+
+    <!-- ===================== PART 3 ===================== -->
+    <section id="part-3">
+      <h2 class="section-title" style="margin-bottom:14px;">下、私經濟行政與公私法區別</h2>
+
+      <details class="section" id="p3-1" open>
+        <summary>
+          <span>一、公權力行政與私經濟行政</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <pre class="diagram">
+【公權力行政（高權關係）】        【私經濟行政（國庫關係）】
+     國家(統治主體)                    國家＝私人(對等地位)
+          │ 上對下，單方規制                  │ 對等，契約自由
+          ▼                                   ▼
+     人民(被統治者)                      適用民法(私法)等規範
+     適用公法(處分、契約)</pre>
+          <p><strong>公權力行政</strong>：國家居於統治權主體地位，適用公法。<strong>私經濟行政（國庫行政）</strong>：國家處於與私人對等之地位，適用私法（民法）。</p>
+        </div>
+      </details>
+
+      <details class="section" id="p3-2">
+        <summary>
+          <span>二、私經濟行政（國庫行政）之類型</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+
+          <h4>1. 行政輔助</h4>
+          <p>國家為達成行政任務，向私部門取得所需物品與人力。例：租用辦公大樓、僱用清潔／保全人員。</p>
+
+          <h4>2. 行政營利</h4>
+          <p>國家以獲利為目的從事營利活動，本質「與民爭利」，具持續性。例：中油、台電、台灣造船。</p>
+
+          <h4>3. 行政私法（給付行為）</h4>
+          <p>國家為履行憲法上的「生存照顧義務」，以私法形式提供人民給付，具濃厚公益色彩。</p>
+          <div class="box law">
+            <div class="box-label">關鍵案例</div>
+            <ul style="margin:0;">
+              <li>就學貸款、清寒獎學金、企業紓困貸款</li>
+              <li>水電之供應</li>
+              <li><strong>配耕土地給榮民</strong>（釋字第457號 <span class="tag verified">已查證✓</span>）：與國家成立「使用借貸」（民§464）關係</li>
+              <li><strong>租售國民住宅</strong>（釋字第540號 <span class="tag verified">已查證✓</span>）：屬買賣、租賃、借貸之私法關係，非公權力行使</li>
+            </ul>
+          </div>
+
+          <details class="subsection">
+            <summary>
+              補充：其他私經濟行政類型
+              <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </summary>
+            <div class="subsection-body">
+              <p><strong>參與交易活動</strong>：具特定行政目的、受供需法則支配、目的達成即須撤場（如買賣外匯穩定匯率）。區別行政營利：後者具持續性且旨在獲利，前者具一時性且旨在達成特定公共任務。</p>
+              <p><strong>行政的財產管理行為</strong>：出售公有非公用財產（釋字第448號 <span class="tag verified">已查證✓</span>：屬私法契約，爭執循民事訴訟）；國軍老舊眷村配住關係（最高行政法院102年10月第2次庭長法官聯席會議：屬私法上國庫行政關係）。</p>
+              <div class="box">
+                <div class="box-label">學科思維叮嚀</div>
+                收購公糧究竟屬行政輔助、參與交易還是行政私法，法務部函釋認為屬行政私法。歸納法分類的類型間具有「流動性與模糊空間」，只要知道它「不是行政處分、不是公權力，而是私經濟行政」即可，不必對細部分類過於執著。
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="section" id="p3-3">
+        <summary>
+          <span>三、公權力行政與私經濟行政之區別標準</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <h4>甲說：法律關係說</h4>
+          <p>上下秩序關係 → 公權力行政；對等契約關係 → 私經濟行政。批評：過於抽象，難以在具體個案操作。</p>
+
+          <h4>乙說：具體個案判定說（主流實務與學說）</h4>
+          <p>從個案中行為的<strong>外觀與實質內容</strong>探究，並非主觀說，而是以客觀行為外觀形式與內容為準。</p>
+          <div class="box exam">
+            <div class="box-label">無法判定時之推定原則（極重要考點）</div>
+            如果無法判定是公權力還是私經濟時，<strong>應推定為公權力行政</strong>。理由：避免國家躲在「私法自治、契約自由」的保護傘下擺脫依法行政原則，對人民權利保護更周延。
+          </div>
+        </div>
+      </details>
+
+      <details class="section" id="p3-4">
+        <summary>
+          <span>四、區別實益：憲法基本權利之拘束力</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p>當國家「脫掉西裝（公權力），穿上睡衣（私經濟）」時，是否仍受基本權拘束？（與基本權第三人效力無關，此處是國家化身為私人時的定位問題）</p>
+
+          <h4>1. 否定說</h4>
+          <p>私經濟行政不受基本權拘束，因國家已立於與私人平等之地位。</p>
+
+          <h4>2. 肯定說（避免公法遁入私法）</h4>
+          <p>私經濟行政必須完全受基本權拘束，否則國家會頻繁藉由變換行為模式侵害人權。</p>
+
+          <h4>3. 折衷說（實務與通說主流：行政私法理論）</h4>
+          <div class="box law">
+            <div class="box-label">行政私法理論（我國通說與實務）</div>
+            <ul style="margin:0;">
+              <li><strong>行政輔助、行政營利</strong>：<strong>不受</strong>基本權拘束（國家處於市場競爭地位）</li>
+              <li><strong>行政私法（給付行政）</strong>：<strong>應受</strong>基本權拘束（涉及生存照顧義務，具公益色彩）</li>
+            </ul>
+          </div>
+          <div class="box exam">
+            <div class="box-label">結論</div>
+            我國實務與通說採「行政私法理論」，<strong>至少行政私法（給付行為）應受憲法基本權利拘束</strong>！
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:32px 0;">
+
+    <!-- ===================== APPENDIX 1: doctrine deep-dive ===================== -->
+    <section id="appendix-1">
+      <h2 class="section-title" style="margin-bottom:14px;">附錄一：釋字與條文深入解析</h2>
+
+      <details class="section" open>
+        <summary>
+          <span>釋字第457號｜配耕榮民土地案</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p><strong>公布時間</strong>：民國87年6月5日</p>
+          <h4>案件事實</h4>
+          <p>國家為安置除役榮民，將國有土地配耕給榮民及其配偶耕作。行政院國軍退除役官兵輔導委員會訂定的作業規定，卻只允許榮民之「兒子」繼承耕作權，女兒不得繼承，遺孀若未再婚才可繼續，形成男女待遇不平等的爭議。</p>
+          <h4>解釋意旨</h4>
+          <p>大法官指出，退輔會與配耕榮民間，是本於<strong>照顧退除役官兵之生活</strong>而成立的<strong>使用借貸關係（民法第464條）</strong>，屬於私法關係。但即使國家是以私法形式（訂立借貸契約）來履行照顧義務，<strong>仍應遵守憲法第7條男女平等原則</strong>，該作業規定違反平等權，因此違憲。</p>
+          <h4>學理意義</h4>
+          <p>本號解釋是「<strong>行政私法理論</strong>」在實務上最常被引用的依據：國家縱然選擇用私法的外衣（借貸、買賣、租賃）去執行具有公益、社會照顧色彩的任務，也不能因此逃脫憲法基本權的拘束——這就是「<strong>避免公法遁入私法</strong>」的具體實踐，直接對應到「私經濟行政是否受基本權拘束」的折衷說／行政私法理論。</p>
+          <div class="box law">
+            <div class="box-label">一句話記憶</div>
+            國家換了衣服（私法），但骨子裡的義務（憲法拘束）沒有換。
+          </div>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span>釋字第540號｜國民住宅出售出租案（雙階理論經典）</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p><strong>公布時間</strong>：民國91年2月8日</p>
+          <h4>案件事實</h4>
+          <p>國民住宅條例規定，政府得直接興建國宅，以較低收入家庭為對象辦理出售、出租或貸款自建。爭議在於：人民與主管機關間因申請承購、承租、貸款所生的爭執，究竟該打行政訴訟，還是走民事訴訟？</p>
+          <h4>解釋意旨</h4>
+          <p>大法官將整個過程拆成<strong>兩個階段</strong>來看：</p>
+          <ul>
+            <li><strong>第一階段（資格審查）</strong>：人民提出申請，主管機關審查是否符合法定要件——這是行政機關依公法規定所做的認定，若不准予訂約（申請被拒），人民<strong>可提起行政爭訟</strong>救濟。</li>
+            <li><strong>第二階段（締約履行）</strong>：一旦審查通過，雙方即依私法規定簽訂買賣、租賃或借貸契約——這階段是<strong>純粹私法關係</strong>，爭執只能循民事訴訟解決。</li>
+          </ul>
+          <h4>學理意義</h4>
+          <p>這就是行政法上著名的<strong>「雙階理論」</strong>：同一件事，會因為所處階段不同，一部分定性為公法（可提行政爭訟），一部分定性為私法（走民事訴訟）。這是「具體個案判定說」在實務操作上的延伸應用——不是整件事一刀切歸類為公法或私法，而是拆解各個階段分別判斷其法律性質。</p>
+          <div class="box law">
+            <div class="box-label">一句話記憶</div>
+            「有沒有資格」是公法問題（行政爭訟）；「資格通過後怎麼簽約」是私法問題（民事訴訟）。
+          </div>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span>釋字第448號｜公有財產出售出租案</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p><strong>公布時間</strong>：民國87年2月27日</p>
+          <h4>案件事實</h4>
+          <p>人民向鄉鎮公所申購公有畸零地遭拒絕，另有人民請求繼續承租公有耕地也遭拒絕。行政法院依循舊判例，認為此類爭議屬私法契約關係，一律不許提起行政訴訟，人民認為此舉侵害其憲法第16條保障的訴訟權，聲請釋憲。</p>
+          <h4>解釋意旨</h4>
+          <p>大法官肯認：<strong>行政機關代表國庫出售或出租公有財產，並非行使公權力對外發生法律效果的單方行政行為，因此不是行政處分，而是私法上的契約行為</strong>。當事人如有爭執，應循<strong>民事訴訟程序</strong>解決，不得提起行政爭訟。這樣的安排並未侵害人民訴訟權，因為人民仍有救濟途徑（民事訴訟），只是審判權歸屬不同的法院體系（二元訴訟制度）。</p>
+          <h4>學理意義</h4>
+          <p>本號解釋確立了行政機關「以國庫身分」處分財產時的定性標準：<strong>單方性、公權力性的欠缺</strong>是判斷是否為行政處分的關鍵。同時也點出我國採行政訴訟與民事訴訟<strong>二元分立</strong>的審判權制度，兩者「各有所司，不容混淆」。</p>
+          <div class="box law">
+            <div class="box-label">一句話記憶</div>
+            國家賣房子、租房子，就是房東房客的關係，不是官民關係。
+          </div>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span>釋字第553號｜台北市里長延選案</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p><strong>公布時間</strong>：民國91年12月20日</p>
+          <h4>案件事實</h4>
+          <p>台北市政府因行政區域調整，決定延後辦理里長選舉。內政部認為此舉違反地方制度法第83條第1項「特殊事故」的規定，報請行政院撤銷台北市政府的延選決定。台北市政府不服，聲請釋憲，爭點在於：中央對地方自治事項的監督界線何在？</p>
+          <h4>解釋意旨</h4>
+          <p>大法官區分了兩種監督密度：</p>
+          <ul>
+            <li><strong>自治事項</strong>：地方自治團體自行處理，中央<strong>僅能為「適法性監督」</strong>——只問地方的判斷合不合法，不能干涉是否妥當，除非地方的判斷有恣意濫用等違法情事，中央才能撤銷或變更。</li>
+            <li><strong>委辦事項</strong>：地方代中央執行事務，中央<strong>除適法性外，還可為「合目的性監督」</strong>，就行政作業是否妥當實施全面監督。</li>
+          </ul>
+          <p>並提出審查密度應考量的六項因素（事件性質、決策過程是否合議、法律程序、事實涵攝有無錯誤、解釋有無違背法則、有無漏未斟酌事項），為不確定法律概念的司法審查密度建立操作標準。</p>
+          <h4>學理意義</h4>
+          <p>本號解釋是地方自治監督體系的核心依據，劃出了「中央監督地方」時，自治事項與委辦事項<strong>監督強度不同</strong>的憲法界線，同時也是憲法對地方自治「制度性保障」精神的具體展現——監督不能淪為中央架空地方自治的工具。</p>
+          <div class="box law">
+            <div class="box-label">一句話記憶</div>
+            自己的事，中央只能挑法律毛病；幫忙辦的事，中央還能挑好不好、妥不妥當。
+          </div>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span>民法第464條｜使用借貸</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p>使用借貸是指當事人一方（貸與人）將自己的物品無償交付他方（借用人）使用，借用人於使用後應返還該物的契約。<strong>重點在「無償」</strong>——這與租賃（有償）不同，也因此在配耕榮民案中，國家把土地無償提供給榮民耕作，性質上更貼近使用借貸而非租賃。這條文之所以在行政法課程中被提及，是因為它是釋字457號用來定性「國家與人民之間法律關係」的私法基礎規範，展現了行政私法概念下，國家如何援引民法既有的契約類型來履行其照顧義務。</p>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span>地方制度法第2條、第4條｜地方自治團體之公法人地位</span>
+          <svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </summary>
+        <div class="section-body">
+          <p><strong>第2條</strong>對地方自治的關鍵用語作出定義，其中明確指出<strong>地方自治團體是依法辦理自治事項，具公法人地位的團體</strong>（包含直轄市、縣市、鄉鎮市）。<strong>第4條</strong>則規定地方自治團體的層級分類標準（人口數、政治、經濟、文化等條件），決定一個地方應設直轄市、縣市或鄉鎮市。</p>
+          <p>這兩條文是講義中「德台制度對照」部分的法律依據：<strong>我國僅有地方自治團體具有公法人地位</strong>，這與德國另外承認職業公會、公法財團等多元公法人主體的制度大不相同，也是「不要認他鄉為故鄉」這句提醒背後的規範基礎。</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ===================== APPENDIX 2: glossary ===================== -->
+    <section id="appendix-2" style="margin-top:32px;">
+      <h2 class="section-title" style="margin-bottom:14px;">附錄二：重要名詞解釋表</h2>
+      <table>
+        <tr><th>名詞</th><th>一句話定義</th></tr>
+        <tr><td>行政組織</td><td>由行政主體、機關、內部單位構成的整體（靜態組織觀點）</td></tr>
+        <tr><td>形式意義的行政</td><td>行政機關所做的一切活動，不論本質為立法、司法或行政</td></tr>
+        <tr><td>實質意義的行政</td><td>本質上屬處理行政事務的活動，不論由誰做</td></tr>
+        <tr><td>特徵描述說</td><td>主流學說：行政無法精確定義，只能透過與私部門/立法/司法比較來描述特徵</td></tr>
+        <tr><td>消極說（扣除說）</td><td>扣除立法與司法後剩下的即為行政，因遺漏統治行為而受批評</td></tr>
+        <tr><td>反射利益</td><td>內部行政對人民造成的僅是事實上不便，非權利受損，不得提起救濟</td></tr>
+        <tr><td>合法性監督</td><td>上級機關只能審查下級行為是否違法，不管妥不妥當</td></tr>
+        <tr><td>合目的性監督</td><td>上級機關可審查下級行為是否適當、合乎政策目的（委辦事項、非獨立機關適用）</td></tr>
+        <tr><td>行政一體原則</td><td>行政機關受上級指揮監督，不同於司法的審判獨立</td></tr>
+        <tr><td>行政私法理論</td><td>我國通說：行政輔助/營利不受基本權拘束；行政私法（給付行政）應受基本權拘束</td></tr>
+        <tr><td>雙階理論</td><td>給付資格審核階段為公法（可提行政爭訟），核准後締約階段為私法關係（釋字540號）</td></tr>
+        <tr><td>推定為公權力行政</td><td>行為性質無法判定時的操作規則，理由是避免國家「公法遁入私法」</td></tr>
+      </table>
+    </section>
+
+    <footer class="page-footer">
+      <p>本筆記為課程逐字稿之整理，供學術討論與複習用途，非正式法律意見。若涉及最新修法或最新解釋，請自行確認最新版本。</p>
+      <a class="back-to-top" href="#overview">↑ 回到頂端</a>
+    </footer>
+
+  </main>
+</div>
+
+<button class="mobile-toc-toggle" id="tocToggle" aria-label="開啟目錄">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+  目錄
+</button>
+
+<script>
+  // Mobile TOC toggle
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  const tocToggle = document.getElementById('tocToggle');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+  tocToggle.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+  overlay.addEventListener('click', closeSidebar);
+
+  // Close sidebar on link click (mobile) + set active state
+  const tocLinks = document.querySelectorAll('.toc a');
+  tocLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeSidebar();
+    });
+  });
+
+  // Highlight active TOC link on scroll
+  const sections = Array.from(tocLinks).map(link => {
+    const id = link.getAttribute('href').slice(1);
+    return { link, el: document.getElementById(id) };
+  }).filter(s => s.el);
+
+  function updateActiveLink() {
+    let current = sections[0];
+    const scrollPos = window.scrollY + 100;
+    for (const s of sections) {
+      if (s.el.offsetTop <= scrollPos) current = s;
+    }
+    tocLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActiveLink);
+  updateActiveLink();
+
+  // When jumping via TOC link to a collapsed <details> section, auto-open it
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        const details = target.closest('details') || target.querySelector('details');
+        if (target.tagName.toLowerCase() === 'details') target.open = true;
+        let parentDetails = target.closest('details');
+        if (parentDetails) parentDetails.open = true;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
