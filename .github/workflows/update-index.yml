@@ -1,0 +1,40 @@
+name: Update index
+
+# 只要有 push 到 main 分支，且變動的檔案裡包含根目錄下的 .html 檔案，就會觸發
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    # 避免無限迴圈：機器人自己推送 index.html 更新時，不要再次觸發自己
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate index.html
+        run: python scripts/generate_index.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update index.html [skip ci]"
+            git push
+          fi
